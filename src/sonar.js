@@ -6,6 +6,7 @@ const MICROSECDONDS_PER_CM = 1e6/34321;
 
 class SonarReader extends EventEmitter {
     constructor(config) {
+        super();
         this.config = config;
         if (this.config.triggerPin) {
             this.trigger = new Gpio(this.config.triggerPin, {mode: Gpio.OUTPUT});
